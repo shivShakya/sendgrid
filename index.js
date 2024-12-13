@@ -88,7 +88,10 @@ app.post('/send-email', async (req, res) => {
     subject: `Secret Santa AR Game - ${name}`,
     templateId: "d-a6cae300ddb94c93b890c0418c5bd2d9",
     dynamicTemplateData: {
-      fullName: "Secret Santa",
+      first_name: "Secret Santa",
+      external_id: treeId,
+      Weblink1: "_____",
+      Weblink2: "_____"
     },
   };
 
