@@ -74,7 +74,7 @@ app.get('/get-data', async (req, res) => {
 });
 
 app.post('/send-email', async (req, res) => {
-  const { email, name, treeId } = req.body;
+  const { email, name, treeId , siteUrl , sharingUrl} = req.body;
   console.log({email , name , treeId})
 
   // Validate input
@@ -88,10 +88,10 @@ app.post('/send-email', async (req, res) => {
     subject: `Secret Santa AR Game - ${name}`,
     templateId: "d-a6cae300ddb94c93b890c0418c5bd2d9",
     dynamicTemplateData: {
-      first_name: "Secret Santa",
+      first_name: name,
       external_id: treeId,
-      Weblink1: "_____",
-      Weblink2: "_____"
+      Weblink1:siteUrl,
+      Weblink2: sharingUrl
     },
   };
 
