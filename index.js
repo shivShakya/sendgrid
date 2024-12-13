@@ -85,9 +85,11 @@ app.post('/send-email', async (req, res) => {
   const msg = {
     to: email,
     from: 'no-reply@narr8ar.com',
-    subject: `Hello, ${name}!`,
-    text: `Hi ${name}, we're excited to have you here! Hope you are fine! Here is your ID to access your tree: ${treeId}`,
-    html: `<strong>Hi ${name}, we're excited to have you here! Hope you are fine! Here is your ID to access your tree: ${treeId}</strong>`,
+    subject: `Secret Santa AR Game - ${name}`,
+    templateId: "d-a6cae300ddb94c93b890c0418c5bd2d9",
+    dynamicTemplateData: {
+      fullName: "Secret Santa",
+    },
   };
 
   try {
